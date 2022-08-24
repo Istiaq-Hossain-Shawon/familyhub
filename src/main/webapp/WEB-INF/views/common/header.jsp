@@ -8,7 +8,7 @@
 <html>
 <head>
     <meta charset="ISO-8859-1">
-    <title>Instagram</title>
+    <title>Family Hub</title>
 
 
 </head>
@@ -22,20 +22,15 @@
 	
 	<div class="header-content-wrapper">		
 		
-		<%-- <a href="${pageContext.request.contextPath}/post/add" class="link-find-friend">
-		<img src="${pageContext.request.contextPath }/img/add.png" alt="Instagram" style='    width: 40px;'> --%>
-		<!-- <span style="color:#BA3694">Create Post </span></a> -->
-		
+
 		<div class="control-block">
 			<div class="author-page author vcard inline-items more">
 				<div class="author-thumb">
-					<img alt="author" src="${pageContext.request.contextPath }/img/user.png" class="avatar" style='width: 50px;'>
 					
-					<span class="icon-status online"></span>
 					<div class="more-dropdown more-with-triangle">
 						<div class="mCustomScrollbar" data-mcs-theme="dark">
 							<div class="ui-block-title ui-block-title-small">
-								<h6 class="title">Your Account</h6>
+								<h6 c	lass="title">Your Account</h6>
 							</div>
 							<ul class="account-settings">								
 								<li>
@@ -57,7 +52,7 @@
 
 					</div>
 				</div>
-				<a href="02-ProfilePage.html" class="author-name fn">
+				<a  class="author-name fn">
 					<div class="author-title">
 					<sec:authentication var="principal" property="principal" />
 					${principal.username}
