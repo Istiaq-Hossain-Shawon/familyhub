@@ -16,8 +16,56 @@ public class FamilyInfo implements Serializable {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "id")
     private long familyId;
+
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
+    @JoinColumn(name = "userId", nullable = false)
+    private User user;  
     
-    private String cardNo;
+    
+	private String cardNo;
+	
+	 @Column(name = "createdDate")
+	 private Date  createdDate;   
+
+	private String area;
+    
+    private String ward;
+    
+    private String thana;
+    
+    private String name;
+    
+    private String spouseName;
+    
+    private String profession;
+    
+    private String mobileNo;
+    
+    private String nationalId;
+    
+
+    @OneToMany(mappedBy = "imgFamily", fetch = FetchType.EAGER,
+            cascade = CascadeType.ALL)
+    private Set<FamilyImage> familyImage;
+    
+	public Set<FamilyImage> getPostImage() {
+		return familyImage;
+	}
+	public void setPostImage(Set<FamilyImage> familyImage) {
+		this.familyImage= familyImage;
+	}
+	public Date getCreatedDate() {
+		return createdDate;
+	}
+	public void setCreatedDate(Date createdDate) {
+		this.createdDate = createdDate;
+	}
+	public User getUser() {
+		return user;
+	}
+	public void setUser(User user) {
+		this.user = user;
+	}
     
     public long getFamilyId() {
 		return familyId;
@@ -84,33 +132,6 @@ public class FamilyInfo implements Serializable {
 	}
 	public void setFamilyImage(Set<FamilyImage> familyImage) {
 		this.familyImage = familyImage;
-	}
-	private String area;
-    
-    private String ward;
-    
-    private String thana;
-    
-    private String name;
-    
-    private String spouseName;
-    
-    private String profession;
-    
-    private String mobileNo;
-    
-    private String nationalId;
-    
-
-    @OneToMany(mappedBy = "imgFamily", fetch = FetchType.EAGER,
-            cascade = CascadeType.ALL)
-    private Set<FamilyImage> familyImage;
-    
-	public Set<FamilyImage> getPostImage() {
-		return familyImage;
-	}
-	public void setPostImage(Set<FamilyImage> familyImage) {
-		this.familyImage= familyImage;
 	}
 	public FamilyInfo() {
 		super();

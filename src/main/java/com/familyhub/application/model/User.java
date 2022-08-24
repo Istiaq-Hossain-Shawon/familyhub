@@ -41,7 +41,18 @@ public class User implements Serializable {
 	            cascade = CascadeType.ALL)
 	private Set<Post> posts;
 	
+	@OneToMany(mappedBy = "user", fetch = FetchType.EAGER,
+            cascade = CascadeType.ALL)
+private Set<FamilyInfo> familInfos;
 	
+	
+	public Set<FamilyInfo> getFamilInfos() {
+		return familInfos;
+	}
+	public void setFamilInfos(Set<FamilyInfo> familInfos) {
+		this.familInfos = familInfos;
+	}
+
 	@OneToMany(mappedBy = "usrLike", fetch = FetchType.EAGER,
             cascade = CascadeType.ALL)
     private Set<PostLike> postLike;

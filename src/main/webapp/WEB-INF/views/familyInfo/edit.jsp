@@ -1,5 +1,7 @@
 <!-- GLOBAL HEADER -->
-
+<!-- GLOBAL HEADER -->
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <jsp:include page="/WEB-INF/views/common/header.jsp" />
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -12,59 +14,115 @@
 <div class="container">
 
 	<div class="col col-lg-12 col-md-12 col-sm-12 col-12">
+	
+		<div class="ui-block-title">
+			<h3 class="title">পরিবার পরিচিতি কার্ড</h3>
+		</div>
 
 		<div class="ui-block">
 
-
 			<!-- News Feed Form  -->
 
-			<div class="news-feed-form">
-				<!-- Nav tabs -->
-				<ul class="nav nav-tabs" role="tablist">
-					<li class="nav-item"><a class="nav-link active inline-items"
-						data-toggle="tab" href="#home-1" role="tab" aria-expanded="true">
+			<div class="news-feed-form" style="padding: 10px;">
+				<div id="home-1" aria-expanded="true">
+					<form:form action="${pageContext.request.contextPath }/familyInfo/update"
+							modelAttribute="familyInfo" enctype="multipart/form-data">
+							<form:input path="familyId" value="${familyInfo.familyId}" hidden="hidden" />
+					<div class="form-group row mb-10">
+						<label for="inputEmail3" class="col-sm-2 col-form-label">কার্ড	নং</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" id="inputcardNo" value="${familyInfo.cardNo}"
+								name="cardNo" placeholder="কার্ড নং">
+						</div>
+					</div>
+					<div class="form-group row mb-10">
+						<label for="area" class="col-sm-2 col-form-label">অঞ্চল			</label>
+						<div class="col-sm-2">
+							<input type="text" class="form-control" id="area" name="area" value="${familyInfo.area}"
+								placeholder="অঞ্চল">
+						</div>
 
-							<svg class="olymp-status-icon">
-								<use xlink:href="svg-icons/sprites/icons.svg#olymp-status-icon"></use></svg>
+						<label for="ward" class="col-sm-2 col-form-label">ওয়ার্ড
+						</label>
+						<div class="col-sm-2">
+							<input type="text" class="form-control" id="ward" name="ward" value="${familyInfo.ward}"
+								placeholder="ওয়ার্ড">
+						</div>
+						<label for="thana" class="col-sm-2 col-form-label">থানা
 
-							<span>Status</span>
-					</a></li>
-				</ul>
+						</label>
+						<div class="col-sm-2">
+							<input type="text" class="form-control" id="c" name="thana" value="${familyInfo.name}"
+								placeholder="থানা">
+						</div>
+					</div>
+					<div class="form-group row mb-10">
+						<label for="name" class="col-sm-2 col-form-label">নাম
+						</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" id="name" value="${familyInfo.name}"
+								name="name" placeholder="নাম">
+						</div>
+					</div>
 
-				<!-- Tab panes -->
-				<div class="tab-content">
-					<div class="tab-pane active" id="home-1" role="tabpanel"
-						aria-expanded="true">
-						<form:form
-							action="${pageContext.request.contextPath }/post/update"
-							modelAttribute="post" enctype="multipart/form-data">
-	<form:input path="postId" value="${post.postId}" hidden="hidden" />
-							<div class="author-thumb">
-								<img
-									src="${pageContext.request.contextPath }/img/default-user.jpg"
-									alt="Cricbean" style='width: 40px;'>
+					<div class="form-group row mb-10">
+						<label for="spouseName" class="col-sm-2 col-form-label">স্বামী/স্ত্রী
+							নাম </label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" id="spouseName" value="${familyInfo.spouseName}"
+								name="spouseName" placeholder="স্বামী/স্ত্রী নাম">
+						</div>
+					</div>
+
+					<div class="form-group row mb-10">
+						<label for="profession" class="col-sm-2 col-form-label">পেশা
+						</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" id="profession" value="${familyInfo.profession}"
+								name="profession" placeholder="পেশা">
+						</div>
+					</div>
+
+					<div class="form-group row mb-10">
+						<label for="mobileNo" class="col-sm-2 col-form-label">মোবাইল
+							নাম্বার </label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" id="mobileNo" value="${familyInfo.mobileNo}"
+								name="mobileNo" placeholder="মোবাইল নাম্বার">
+						</div>
+					</div>
+
+					<div class="form-group row mb-10">
+						<label for="nationalId" class="col-sm-2 col-form-label">জাতীয়
+							পরিচয় পত্র </label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" id="nationalId" value="${familyInfo.nationalId}"
+								name="nationalId" placeholder="জাতীয় পরিচয় পত্র">
+						</div>
+					</div>
+					<div class="form-group row mb-10">
 
 
+						<label for="image" class="col-sm-2 col-form-label">ছবি: </label>
+						<div class="col-sm-10">
+							<input type="file" name="images" multiple="multiple" />
+						</div>
 
-							</div>
-							<div class="form-group with-icon label-floating is-empty">
-								<textarea class="form-control" name="postContent" value=""
-									placeholder="">
-									<c:out value="${post.postContent}" /> 
-									</textarea>
-							</div>
 
+					</div>
+					
+					
 
 							<div class="post-block-photo js-zoom-gallery">
 
-								<c:if test="${not empty post.postImage}">
+								<c:if test="${not empty familyInfo.familyImage}">
 									<div class="form-group col-md-4">
 										<table class="table">
 											<tr>
 												<th>Images</th>
 												<th>Action</th>
 											</tr>
-											<c:forEach items="${post.postImage}" var="image">
+											<c:forEach items="${familyInfo.familyImage}" var="image">
 
 												<tr>
 													<th>
@@ -74,7 +132,7 @@
 													</th>
 													<th>
 														<a class="badge badge-primary"	
-														href="${pageContext.request.contextPath}/post/deleteImage?postId=${post.postId}&imageId=${image.imageId}">Delete</a>
+														href="${pageContext.request.contextPath}/post/deleteImage?familyId=${familyInfo.familyId}&imageId=${image.imageId}">Delete</a>
 													</th>
 												</tr>
 											</c:forEach>
@@ -84,23 +142,18 @@
 								</c:if>
 							</div>
 
-							<div class="add-options-message">
-								<label for="image">Images: </label> <input type="file"
-									name="images" multiple="multiple" /> <input type="submit"
-									class="btn btn-primary" value="Update Post">
-
-
-							</div>
-
-						</form:form>
-					</div>
-
-
+					<input type="submit" class="btn btn-primary btn-md-2" value="অ্যাড করুন"
+						style="width: 15%; float: right; margin-top: 5px;">
+					</form:form>
 				</div>
+
 			</div>
 
 			<!-- ... end News Feed Form  -->
 		</div>
+	
+	
+	
 	</div>
 
 

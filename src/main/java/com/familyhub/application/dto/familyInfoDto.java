@@ -133,6 +133,15 @@ public class familyInfoDto implements Serializable {
 		this.images = images;
 	}
 	 
+	private User user;
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
 	public familyInfoDto() {
 		super();
 	}	
