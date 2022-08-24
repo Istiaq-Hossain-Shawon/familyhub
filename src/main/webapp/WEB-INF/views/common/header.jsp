@@ -20,26 +20,7 @@
 		
 	</div>
 	
-	<div class="header-content-wrapper">
-		<a href="${pageContext.request.contextPath }/" style="float:left">
-		<img src="${pageContext.request.contextPath }/img/logo.png" alt="Instagram" style=' padding-top:10px;   width: 40px;'>
-		</a>
-		<form:form class="search-bar w-search notification-list friend-requests"
-							action="${pageContext.request.contextPath }/post/search"
-							modelAttribute="PostDto">
-		
-		
-			<div class="form-group with-button">
-			
-				<input class="form-control js-user-search" name="postContent" placeholder="Search here post content  or user name..." type="text">
-				<button type="submit">
-						<img
-										class="olymp-menu-icon left-menu-icon"
-										src="${pageContext.request.contextPath }/img/search.png" />
-				</button>
-			</div>
-		</form:form>
-		
+	<div class="header-content-wrapper">		
 		
 		<%-- <a href="${pageContext.request.contextPath}/post/add" class="link-find-friend">
 		<img src="${pageContext.request.contextPath }/img/add.png" alt="Instagram" style='    width: 40px;'> --%>
