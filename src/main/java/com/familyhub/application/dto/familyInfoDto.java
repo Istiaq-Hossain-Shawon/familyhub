@@ -26,8 +26,17 @@ public class familyInfoDto implements Serializable {
     private String thana;
     
     private String name;
+    private String searchContent;
     
-    public long getFamilyId() {
+    public String getSearchContent() {
+		return searchContent;
+	}
+
+	public void setSearchContent(String searchContent) {
+		this.searchContent = searchContent;
+	}
+
+	public long getFamilyId() {
 		return familyId;
 	}
 

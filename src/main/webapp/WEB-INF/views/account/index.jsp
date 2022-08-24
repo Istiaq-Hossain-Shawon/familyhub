@@ -8,6 +8,8 @@
 <!-- COURSE COVER IMAGE -->
 
 
+
+
 <!-- MAIN CONTENT OF THE PAGE -->
 <div class="container">
 
@@ -26,7 +28,7 @@
 								<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
 									<div class="form-group">
 										<label for="teamName">username</label>
-										<form:input path="username" class="form-control" id="teamName"
+										<form:input path="username" class="form-control lineH5"  id="teamName"
 											placeholder="team Name..." />
 									</div>
 								</div>

@@ -11,7 +11,7 @@
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/css/Bootstrap/dist/css/bootstrap-grid.css">
 
 	<!-- Main Styles CSS -->
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/css/main.min.css">
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/css/main.min.css"> 
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/css/fonts.min.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/css/jquery-ui.css">
 

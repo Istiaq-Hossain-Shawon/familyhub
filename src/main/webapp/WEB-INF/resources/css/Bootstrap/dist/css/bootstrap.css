@@ -2245,7 +2245,7 @@ select.form-control:focus::-ms-value {
     }
 
 .btn-primary.focus, .btn-primary:focus, .btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .show > .btn-primary.dropdown-toggle:focus {
-    box-shadow: 0 0 0 .2rem rgba(255,94,58,.5);
+    /* box-shadow: 0 0 0 .2rem rgba(255,94,58,.5); */
 }
 
 .btn.disabled, .btn:disabled {
@@ -2260,28 +2260,28 @@ a.btn.disabled, fieldset:disabled a.btn {
     color: #fff;
     /*background: linear-gradient(120deg, #BA3694, #5983e8);;
     border-color: #BA3694;*/
-   background: linear-gradient(120deg, #BA3694, #5983e8);
+ /*   background: linear-gradient(120deg, #BA3694, #5983e8); */
     border-color: #5bc0de;
 }
 
     .btn-primary:hover {
         color: #fff;
         /*background-color: #ff3f14;*/
-        background: linear-gradient(120deg, #BA3694, #5983e8);
-        border-color: #BA3694;
+       /*  background: linear-gradient(120deg, #BA3694, #5983e8);
+        border-color: #BA3694; */
     }
 
     .btn-primary.disabled, .btn-primary:disabled {
         color: #fff;
         /*background: linear-gradient(120deg, #BA3694, #5983e8);;*/
-         background: linear-gradient(120deg, #BA3694, #5983e8);
+       /*   background: linear-gradient(120deg, #BA3694, #5983e8); */
         /*border-color: #BA3694;*/
     }
 
     .btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show > .btn-primary.dropdown-toggle {
         color: #fff;
-        background-color: #ff3407;
-        border-color: #f92e00;
+     /*    background-color: #38a9ff;
+        border-color: #f92e00; */
     }
 
 .btn-success.focus, .btn-success:focus, .btn-success:not(:disabled):not(.disabled).active:focus, .btn-success:not(:disabled):not(.disabled):active:focus, .show > .btn-success.dropdown-toggle:focus {
@@ -3996,7 +3996,7 @@ tbody.collapse.show {
     .badge-primary[href]:focus, .badge-primary[href]:hover {
         color: #fff;
         text-decoration: none;
-        background-color: #ff3407;
+        /* background-color: #38a9ff; */
     }
 
 .badge-success {
@@ -4948,7 +4948,7 @@ button.close {
 }
 
 a.bg-primary:focus, a.bg-primary:hover, button.bg-primary:focus, button.bg-primary:hover {
-    background-color: #ff3407 !important;
+   /*  background-color: #38a9ff !important; */
 }
 
 .bg-success {
@@ -7947,7 +7947,7 @@ a.bg-secondary:focus, a.bg-secondary:hover, button.bg-secondary:focus, button.bg
 }
 
 a.text-primary:focus, a.text-primary:hover {
-    color: #ff3407 !important;
+    color: #38a9ff !important;
 }
 
 .text-success {

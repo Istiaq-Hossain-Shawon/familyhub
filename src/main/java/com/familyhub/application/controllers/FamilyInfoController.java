@@ -114,6 +114,22 @@ public class FamilyInfoController {
 		
 		
 		try {
+			
+			if (familyInfo.getCardNo() == null || familyInfo.getCardNo().trim().isEmpty()) {
+				throw new RuntimeException("Please give card no");
+			}	
+			
+			var username="";
+			Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+			if (principal instanceof UserDetails) {
+				  username = ((UserDetails)principal).getUsername();
+				} else {
+				  username = principal.toString();
+			}	
+			
+			var data=userService.getUserByUserName(username).get();
+			familyInfo.setUser(data);
+			
 			List<ImageDto> images= new ArrayList<ImageDto>();
 			for (var temp : familyInfo.getImages()) {
 				ImageDto  imgDto= new ImageDto();
@@ -133,6 +149,11 @@ public class FamilyInfoController {
 		familyService.update(familyInfo);
 		model.addAttribute("message", "information updated successfully");
 		return "redirect:/familyInfo/detail?id="+familyInfo.getFamilyId();
+	}
+	@PostMapping("/familyInfo/search")
+	public String search(@ModelAttribute(name = "familyInfoDto") familyInfoDto familyInfoDto, Model model) {		
+				
+		return "redirect:/?_search="+familyInfoDto.getSearchContent()+"&_pageIndex=0&_rows=5&_sort=NA";
 	}
 	
 
