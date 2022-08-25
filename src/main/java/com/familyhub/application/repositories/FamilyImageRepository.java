@@ -12,8 +12,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.familyhub.application.model.FamilyImage;
-import com.familyhub.application.model.Post;
-import com.familyhub.application.model.PostImage;
+
 
 @Repository
 @Transactional

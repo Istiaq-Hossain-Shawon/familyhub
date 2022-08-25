@@ -1,16 +1,12 @@
 package com.familyhub.application.controllers;
 
 import com.familyhub.application.dto.ImageDto;
-import com.familyhub.application.dto.PostCommentDto;
-import com.familyhub.application.dto.PostDto;
+
 import com.familyhub.application.dto.familyInfoDto;
 import com.familyhub.application.enums.Role;
-import com.familyhub.application.model.Post;
-import com.familyhub.application.model.PostImage;
 import com.familyhub.application.model.User;
 import com.familyhub.application.repositories.UserRepository;
 import com.familyhub.application.service.FamilyService;
-import com.familyhub.application.service.PostService;
 import com.familyhub.application.service.UserService;
 
 import java.util.ArrayList;
@@ -93,7 +89,7 @@ public class RootController {
 	}
 	@GetMapping("/account/index")
 	public String account(Model model) {
-		model.addAttribute("post", new PostDto());
+		
 		var username="";
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		if (principal instanceof UserDetails) {

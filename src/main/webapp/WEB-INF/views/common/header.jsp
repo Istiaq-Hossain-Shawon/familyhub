@@ -1,11 +1,19 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-         pageEncoding="ISO-8859-1" %>
+<%@ page language="java" contentType="text/html;  charset=UTF-8"
+         pageEncoding="UTF-8" %>
+         
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
 <!DOCTYPE html>
 <html>
+<style>
+
+.header .page-title>* {
+    color: #888da8 !important;
+    margin: 0;
+}
+</style>
 <head>
     <meta charset="ISO-8859-1">
     <title>Family Hub</title>
@@ -16,7 +24,9 @@
 
 <header class="header" id="site-header">
 	<div class="page-title">
-		
+		<a   class="author-name fn" href="${pageContext.request.contextPath}/">
+		<span class="author-title">হোম</span>					
+				</a>
 		
 	</div>
 	
@@ -30,21 +40,21 @@
 					<div class="more-dropdown more-with-triangle">
 						<div class="mCustomScrollbar" data-mcs-theme="dark">
 							<div class="ui-block-title ui-block-title-small">
-								<h6 c	lass="title">Your Account</h6>
+								<h6 c	lass="title">আপনার অ্যাকাউন্ট</h6>
 							</div>
 							<ul class="account-settings">								
 								<li>
 									<a href="${pageContext.request.contextPath}/account/index">
 										<svg class="olymp-star-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="FAV PAGE"><use xlink:href="svg-icons/sprites/icons.svg#olymp-star-icon"></use></svg>
 
-										<span>Account</span>
+										<span>অ্যাকাউন্ট</span>
 									</a>
 								</li>
 								<li>								 
 									<a href="${pageContext.request.contextPath}/logout">
 										<svg class="olymp-logout-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-logout-icon"></use></svg>
 
-										<span>Log Out</span>
+										<span>লগ আউট </span>
 									</a>
 								</li>
 							</ul>

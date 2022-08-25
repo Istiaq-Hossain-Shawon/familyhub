@@ -21,23 +21,12 @@ import org.springframework.data.domain.Sort;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.familyhub.application.dto.PostCommentDto;
-import com.familyhub.application.dto.PostDto;
-import com.familyhub.application.dto.PostLikeDto;
 import com.familyhub.application.dto.familyInfoDto;
 import com.familyhub.application.exceptions.ResourceAlreadyExistsException;
 import com.familyhub.application.model.FamilyImage;
 import com.familyhub.application.model.FamilyInfo;
-import com.familyhub.application.model.Post;
-import com.familyhub.application.model.PostComment;
-import com.familyhub.application.model.PostImage;
-import com.familyhub.application.model.PostLike;
 import com.familyhub.application.repositories.FamilyImageRepository;
 import com.familyhub.application.repositories.FamilyRepository;
-import com.familyhub.application.repositories.PostCommentRepository;
-import com.familyhub.application.repositories.PostImageRepository;
-import com.familyhub.application.repositories.PostLikeRepository;
-import com.familyhub.application.repositories.PostRepository;
 import com.familyhub.application.repositories.UserRepository;
 import com.familyhub.application.util.Constants;
 

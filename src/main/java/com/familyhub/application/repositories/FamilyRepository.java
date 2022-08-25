@@ -9,7 +9,6 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.familyhub.application.model.FamilyInfo;
-import com.familyhub.application.model.Post;
 @Repository
 @Transactional
 public interface FamilyRepository extends JpaRepository<FamilyInfo , Long>{	

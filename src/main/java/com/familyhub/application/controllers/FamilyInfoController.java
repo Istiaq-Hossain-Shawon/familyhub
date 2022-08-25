@@ -26,17 +26,10 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import com.familyhub.application.dto.ImageDto;
-import com.familyhub.application.dto.PostCommentDto;
-import com.familyhub.application.dto.PostDto;
-import com.familyhub.application.dto.PostLikeDto;
 import com.familyhub.application.dto.familyInfoDto;
 import com.familyhub.application.model.FamilyInfo;
-import com.familyhub.application.model.Post;
-import com.familyhub.application.model.PostComment;
-import com.familyhub.application.model.PostLike;
 import com.familyhub.application.model.User;
 import com.familyhub.application.service.FamilyService;
-import com.familyhub.application.service.PostService;
 import com.familyhub.application.service.UserService;
 import com.familyhub.application.util.Constants;
 import com.google.gson.Gson;

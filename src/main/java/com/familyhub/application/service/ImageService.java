@@ -21,14 +21,8 @@ import org.springframework.data.domain.Sort;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.familyhub.application.dto.PostCommentDto;
-import com.familyhub.application.dto.PostDto;
-import com.familyhub.application.model.Post;
-import com.familyhub.application.model.PostComment;
-import com.familyhub.application.model.PostImage;
-import com.familyhub.application.repositories.PostCommentRepository;
-import com.familyhub.application.repositories.PostImageRepository;
-import com.familyhub.application.repositories.PostRepository;
+
+
 import com.familyhub.application.repositories.UserRepository;
 import com.familyhub.application.util.Constants;
 

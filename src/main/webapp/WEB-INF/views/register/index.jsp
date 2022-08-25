@@ -25,50 +25,14 @@
 
 
 
-<div class="content-bg-wrap" style="-webkit-animation: sidedownscroll 30s linear infinite;animation: sidedownscroll 30s linear infinite;"></div>
-
 
 <!-- Header Standard Landing  -->
 
-<div class="header--standard header--standard-landing" id="header--standard">
-	<div class="container">
-		<div class="header--standard-wrap">
-
-			<a href="#" class="logo">
-				<div class="img-wrap">
-					<img style="width: 40px;" src="${pageContext.request.contextPath }/img/logo.png" alt="Instragram">
-					
-				</div>
-				<div class="title-block">
-					<h6 class="logo-title">Instagram</h6>
-					<div class="sub-title">SOCIAL NETWORK</div>
-				</div>
-			</a>
-
-			
-		</div>
-	</div>
-</div>
 
 <!-- ... end Header Standard Landing  -->
 <div class="header-spacer--standard"></div>
 
 <div class="container">
-	<div class="row display-flex">
-		<div class="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
-			<div class="landing-content">
-				<h1>Welcome to the Biggest Social  Network in the Bangladesh</h1>
-				<p>We are the best and biggest social network with 5 billion active users all around the country. Share you
-					thoughts, write  posts, follow  your favourit  persons, share photos and much more!
-				</p>
-				<!-- <a href="#" class="btn btn-md btn-border c-white">Register Now!</a> -->
-			</div>
-		</div>
-
-		<div class="col col-xl-5 col-lg-6 col-md-12 col-sm-12 col-12">
-			
-			<!-- Login-Registration Form  -->
-			
 			<div class="registration-login-form">
 				<!-- Nav tabs -->
 				<ul class="nav nav-tabs" role="tablist">
@@ -139,10 +103,11 @@
 							</form:form>
 						</div>
 				</div>
-			</div>
 			
-			<!-- ... end Login-Registration Form  -->		</div>
-	</div>
+			
+			
+			
+			</div>
 </div>
 
 

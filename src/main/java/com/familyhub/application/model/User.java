@@ -14,13 +14,7 @@ public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "id")
-    private long userId;
-    public Set<PostComment> getPostComment() {
-		return postComment;
-	}
-	public void setPostComment(Set<PostComment> postComment) {
-		this.postComment = postComment;
-	}
+    private long userId;    
 
 	@Column(name = "username")
     private String username;
@@ -37,13 +31,11 @@ public class User implements Serializable {
 	
 	@Column(name = "role")
 	private Role role;
-	@OneToMany(mappedBy = "user", fetch = FetchType.EAGER,
-	            cascade = CascadeType.ALL)
-	private Set<Post> posts;
+	
 	
 	@OneToMany(mappedBy = "user", fetch = FetchType.EAGER,
             cascade = CascadeType.ALL)
-private Set<FamilyInfo> familInfos;
+	private Set<FamilyInfo> familInfos;
 	
 	
 	public Set<FamilyInfo> getFamilInfos() {
@@ -51,31 +43,6 @@ private Set<FamilyInfo> familInfos;
 	}
 	public void setFamilInfos(Set<FamilyInfo> familInfos) {
 		this.familInfos = familInfos;
-	}
-
-	@OneToMany(mappedBy = "usrLike", fetch = FetchType.EAGER,
-            cascade = CascadeType.ALL)
-    private Set<PostLike> postLike;
-	
-	@OneToMany(mappedBy = "ccUser", fetch = FetchType.EAGER,
-            cascade = CascadeType.ALL)
-    private Set<PostComment> postComment;    
-	
-	
-
-	
-	
-    public Set<Post> getPosts() {
-		return posts;
-	}
-	public void setPosts(Set<Post> posts) {
-		this.posts = posts;
-	}
-	public Set<PostLike> getPostLike() {
-		return postLike;
-	}
-	public void setPostLike(Set<PostLike> postLike) {
-		this.postLike = postLike;
 	}
 
 	@Column(name = "Age")
