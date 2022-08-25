@@ -71,6 +71,9 @@ public class FamilyInfoController {
 		try {
 			List<ImageDto> images= new ArrayList<ImageDto>();
 			for (var temp : familyInfo.getImages()) {
+				if(temp.getSize()==0) {
+					continue;
+				}
 				ImageDto  imgDto= new ImageDto();
 				byte[] bytes = temp.getBytes();
 				String absoluteFilePath = context.getRealPath(Constants.UPLOADED_FOLDER);
@@ -125,6 +128,9 @@ public class FamilyInfoController {
 			
 			List<ImageDto> images= new ArrayList<ImageDto>();
 			for (var temp : familyInfo.getImages()) {
+				if(temp.getSize()==0) {
+					continue;
+				}
 				ImageDto  imgDto= new ImageDto();
 				byte[] bytes = temp.getBytes();
 				String absoluteFilePath = context.getRealPath(Constants.UPLOADED_FOLDER);
