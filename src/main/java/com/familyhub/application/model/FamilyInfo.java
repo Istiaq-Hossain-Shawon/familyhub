@@ -25,9 +25,7 @@ public class FamilyInfo implements Serializable {
     private User user;  
     
     
-    @Column(name = "cardNo", columnDefinition = "nvarchar(120) default 'istiaq'")
-    @Nationalized
-    @Type(type="org.hibernate.type.StringNVarcharType")    
+    @Column(name = "cardNo", nullable = false)    
 	private String cardNo;
 	
 	 @Column(name = "createdDate")

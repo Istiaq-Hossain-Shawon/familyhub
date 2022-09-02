@@ -8,6 +8,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.access.channel.ChannelProcessingFilter;
 
 @Configuration
 @EnableWebSecurity
@@ -33,6 +34,10 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter{
         // We are disabling CSRF so that our forms don't complain for a CSRF token.
         // Beware that it can create a security vulnerability
 		http.csrf().disable();
+		
+		//add your custom encoding filter as the first filter in the chain
+        http.addFilterBefore(new EncodingFilter(), ChannelProcessingFilter.class);
+        
 
         // We are permitting all static resources to be accessed publicly
 		http
