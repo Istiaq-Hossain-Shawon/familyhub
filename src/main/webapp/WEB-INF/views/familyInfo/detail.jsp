@@ -52,7 +52,7 @@
 
 						</label>
 						<div class="col-sm-2">
-							<input type="text" class="form-control" id="c" name="thana" value="${familyInfo.name}"
+							<input type="text" class="form-control" id="c" name="thana" value="${familyInfo.thana}"
 								placeholder="থানা">
 						</div>
 					</div>

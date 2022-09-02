@@ -15,8 +15,15 @@ public interface FamilyRepository extends JpaRepository<FamilyInfo , Long>{
 	
 	Optional<FamilyInfo> findByFamilyId(long familyId);	
 	
-	@Query(value ="SELECT pst.* FROM tbl_family  pst  where pst.name like %:text%  or pst.cardNo like %:text% "
-			,nativeQuery = true)
+	@Query(value ="SELECT pst.* FROM tbl_family  pst  where pst.full_name like %:text%  or pst.cardNo like %:text% or pst.mobileNo like %:text% or pst.nationalId like %:text% ",nativeQuery = true)
 	Page<FamilyInfo> fullTextSearch(@Param("text") String text,Pageable pageable);	
 	
+//	@Query(value="SELECT m.* FROM tbl_family m WHERE m.full_name LIKE %:text%  ORDER BY ?#{#pageable}",nativeQuery = true)
+//	Page<FamilyInfo> searchByTextSearch(@Param("text") String text,Pageable pageable);
+	
+	
+	@Query(value = "SELECT * FROM tbl_family t WHERE LOWER(t.full_name) LIKE LOWER(CONCAT('%', ?1,'%')) or LOWER(t.cardNo) LIKE LOWER(CONCAT('%', ?1,'%'))", nativeQuery = true)
+	Page<FamilyInfo> searchByTextSearch(String text, Pageable pageable);
+	
+			
 }

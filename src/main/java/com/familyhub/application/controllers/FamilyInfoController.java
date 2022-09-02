@@ -1,11 +1,16 @@
 package com.familyhub.application.controllers;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
+
 
 import javax.servlet.ServletContext;
 
@@ -55,8 +60,14 @@ public class FamilyInfoController {
 	public String add(@ModelAttribute(name = "familyInfo") familyInfoDto familyInfo, Model model) {
 		
 		if (familyInfo.getCardNo() == null || familyInfo.getCardNo().trim().isEmpty()) {
-			throw new RuntimeException("Please give card no");
-		}		
+			throw new RuntimeException("দয়া করে,আপনার কার্ড নাম্বার সরবরাহ করুন ।");
+		}
+		if (familyInfo.getName() == null || familyInfo.getName().trim().isEmpty()) {
+			throw new RuntimeException("দয়া করে,আপনার নাম সরবরাহ করুন ।");
+		}
+		if (familyInfo.getNationalId() == null || familyInfo.getNationalId().trim().isEmpty()) {
+			throw new RuntimeException("দয়া করে,আপনার জাতীয় পরিচয় পত্র সরবরাহ করুন ।");
+		}
 		var username="";
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		if (principal instanceof UserDetails) {
@@ -111,9 +122,16 @@ public class FamilyInfoController {
 		
 		try {
 			
+			
 			if (familyInfo.getCardNo() == null || familyInfo.getCardNo().trim().isEmpty()) {
-				throw new RuntimeException("Please give card no");
-			}	
+				throw new RuntimeException("দয়া করে,আপনার কার্ড নাম্বার সরবরাহ করুন ।");
+			}
+			if (familyInfo.getName() == null || familyInfo.getName().trim().isEmpty()) {
+				throw new RuntimeException("দয়া করে,আপনার নাম সরবরাহ করুন ।");
+			}
+			if (familyInfo.getNationalId() == null || familyInfo.getNationalId().trim().isEmpty()) {
+				throw new RuntimeException("দয়া করে,আপনার জাতীয় পরিচয় পত্র সরবরাহ করুন ।");
+			}
 			
 			var username="";
 			Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
@@ -150,9 +168,16 @@ public class FamilyInfoController {
 		return "redirect:/familyInfo/detail?id="+familyInfo.getFamilyId();
 	}
 	@PostMapping("/familyInfo/search")
-	public String search(@ModelAttribute(name = "familyInfoDto") familyInfoDto familyInfoDto, Model model) {		
+	public String search(@ModelAttribute(name = "familyInfoDto") familyInfoDto familyInfoDto, Model model) {
+		String searchContent = "";
+		try {
+			searchContent = URLEncoder.encode(familyInfoDto.getSearchContent(), "UTF-8");
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 				
-		return "redirect:/?_search="+familyInfoDto.getSearchContent()+"&_pageIndex=0&_rows=5&_sort=NA";
+		return "redirect:/?_search="+searchContent+"&_pageIndex=0&_rows=5&_sort=NA";
 	}
 	
 

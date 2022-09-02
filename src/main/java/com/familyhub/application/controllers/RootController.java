@@ -110,12 +110,12 @@ public class RootController {
 		return "auth/login";
 	}	
 	private void generateUsers() {
-		if (userRepository.findByUsername("user").isEmpty()) {
+		if (userRepository.findByUsername("admin").isEmpty()) {
 			var user = new User();
-			user.setUsername("user");
-			user.setEmail("hossain.ict@gmail.com");
-			user.setPassword(passwordEncoder.encode("1"));	
-			user.setLogo("default.jpg");				
+			user.setUsername("admin");
+			user.setEmail("admin@gmail.com");
+			user.setPassword(passwordEncoder.encode("123456"));	
+//			user.setLogo("default.jpg");				
 			user.setRole(Role.ROLE_USER);			
 			userRepository.save(user);
 		}

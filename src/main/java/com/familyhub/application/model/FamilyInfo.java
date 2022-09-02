@@ -31,12 +31,15 @@ public class FamilyInfo implements Serializable {
 	 @Column(name = "createdDate")
 	 private Date  createdDate;   
 
+	 @Column(name = "area_name")
 	private String area;
-    
+	
+	@Column(name = "ward_name")
     private String ward;
     
     private String thana;
     
+    @Column(name = "full_name")
     private String name;
     
     private String spouseName;

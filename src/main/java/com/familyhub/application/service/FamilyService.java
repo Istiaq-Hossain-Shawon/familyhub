@@ -92,14 +92,13 @@ public class FamilyService {
 	}
 	
 	
-	public Page<FamilyInfo> getAll(String searchText,int pageIndex,int rows,String sort) {
+	public Page<FamilyInfo> getAll(String searchText,int offset,int pageSize,String sort) {
 		Pageable pageWithElements;
-		if(sort.equals("PDA")) {			
-			pageWithElements = PageRequest.of(pageIndex, rows,Sort.by("name").descending());
-		}else {			
-			pageWithElements = PageRequest.of(pageIndex, rows,Sort.by("name").descending());	
-		}		
-		Page<FamilyInfo> teams=familyRepository.fullTextSearch(searchText,pageWithElements);		
+		pageWithElements = PageRequest.of(offset, pageSize,Sort.by("full_name").descending());	
+//		Page<FamilyInfo> teams=familyRepository.fullTextSearch(searchText,pageWithElements);
+//		Page<FamilyInfo> teams=familyRepository.findAll(PageRequest.of(offset,pageSize));
+		Page<FamilyInfo> teams=familyRepository.searchByTextSearch(searchText,PageRequest.of(offset,pageSize));
+		
 		return teams;
 	}
 	public FamilyInfo getFamilyById(long id) {				
