@@ -2,6 +2,9 @@ package com.familyhub.application.model;
 
 import javax.persistence.*;
 
+import org.hibernate.annotations.Nationalized;
+import org.hibernate.annotations.Type;
+
 import com.familyhub.application.enums.Role;
 
 import java.io.Serializable;
@@ -22,6 +25,9 @@ public class FamilyInfo implements Serializable {
     private User user;  
     
     
+    @Column(name = "cardNo", columnDefinition = "nvarchar(120) default 'istiaq'")
+    @Nationalized
+    @Type(type="org.hibernate.type.StringNVarcharType")    
 	private String cardNo;
 	
 	 @Column(name = "createdDate")
