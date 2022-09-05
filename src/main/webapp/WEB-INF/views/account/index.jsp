@@ -73,7 +73,7 @@
 								</c:if>
 							</div>
 						</div>
-							<input type="submit" class="btn btn-primary" value="Update account">
+						<!-- 	<input type="submit" class="btn btn-primary" value="Update account">-->
 						</form:form>
 
 						
